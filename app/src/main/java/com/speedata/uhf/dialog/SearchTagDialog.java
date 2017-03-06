@@ -152,14 +152,26 @@ public class SearchTagDialog extends Dialog implements
             if (inSearch) {
                 inSearch = false;
                 this.setCancelable(true);
-                iuhfService.inventory_stop();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        iuhfService.inventory_stop();
+                    }
+                }).start();
+
                 Action.setText(R.string.Start_Search_Btn);
                 Cancle.setEnabled(true);
             } else {
                 inSearch = true;
                 this.setCancelable(false);
                 scant = 0;
-                iuhfService.inventory_start();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        iuhfService.inventory_start();
+                    }
+                }).start();
+
 
                 Action.setText(R.string.Stop_Search_Btn);
                 Cancle.setEnabled(false);
