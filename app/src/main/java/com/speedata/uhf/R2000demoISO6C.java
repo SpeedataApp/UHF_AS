@@ -5,7 +5,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.PowerManager;
-import android.os.PowerManager.WakeLock;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -53,7 +52,7 @@ public class R2000demoISO6C extends Activity implements OnClickListener {
     private String current_tag_epc = null;
     private Button Speedt;
     private PowerManager pM = null;
-    private WakeLock wK = null;
+    private PowerManager.WakeLock wK = null;
     private int init_progress = 0;
     private String modle;
 
@@ -67,7 +66,9 @@ public class R2000demoISO6C extends Activity implements OnClickListener {
         }
         modle = SharedXmlUtil.getInstance(R2000demoISO6C.this).read("modle", "");
         initUI();
-        if (openDev()) return;
+//        Log.d("getxl_start", String.valueOf(System.currentTimeMillis()));
+//        if (openDev()) return;
+//        Log.d("getxl_end", String.valueOf(System.currentTimeMillis()));
         newWakeLock();
         EventBus.getDefault().register(this);
         Set_Tag.setEnabled(true);
@@ -84,14 +85,14 @@ public class R2000demoISO6C extends Activity implements OnClickListener {
     @Override
     protected void onResume() {
         super.onResume();
-//        if (openDev()) return;
+        if (openDev()) return;
     }
 
     @Override
     protected void onPause() {
         super.onPause();
 //        Log.d("r2000_kt45", "called ondestory");
-//        iuhfService.CloseDev();
+        iuhfService.CloseDev();
     }
 
     @org.greenrobot.eventbus.Subscribe(threadMode = ThreadMode.MAIN)
@@ -201,7 +202,7 @@ public class R2000demoISO6C extends Activity implements OnClickListener {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        iuhfService.CloseDev();
+//        iuhfService.CloseDev();
         wK.release();
     }
 
