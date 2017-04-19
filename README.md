@@ -5,13 +5,13 @@
 ```
  dependencies {
     compile 'com.speedata:deivice:+'
-    compile 'com.speedata:libuhf:+'
+    compile 'com.speedata:libuhf:5.9'
   }
 ```
 
 API文档
 
-	详细的接口说明在showdoc，地址：http://www.showdoc.cc/11073?page_id=90826
+详细的接口说明在showdoc，地址：http://www.showdoc.cc/11073?page_id=90826
 
 北京思必拓科技股份有限公司
 
