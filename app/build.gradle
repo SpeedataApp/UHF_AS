@@ -31,7 +31,7 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:23.4.0'
     testCompile 'junit:junit:4.12'
-    compile 'com.speedata:libuhf:6.9.1'
+    compile 'com.speedata:libuhf:6.9.3'
     compile 'com.speedata:deivice:+'
     compile 'org.greenrobot:eventbus:3.0.0'
 }
