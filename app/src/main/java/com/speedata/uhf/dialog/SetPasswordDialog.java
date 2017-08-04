@@ -116,6 +116,8 @@ public class SetPasswordDialog extends Dialog implements
                     Status.setText(R.string.Status_InvalidNumber);
                 } else if (reval == -5) {
                     Status.setText(R.string.Status_Wrong_Password_Type);
+                }else {
+                    Status.setText(R.string.Status_Write_Error);
                 }
             }
         }

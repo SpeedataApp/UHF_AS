@@ -8,7 +8,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0"
+        versionName "OLD1.6.9"
         ndk {
             //选择要添加的对应cpu类型的.so库。
             abiFilters 'armeabi'
@@ -31,7 +31,7 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:23.4.0'
     testCompile 'junit:junit:4.12'
-    compile 'com.speedata:libuhf:6.8'
+    compile 'com.speedata:libuhf:6.9.1'
     compile 'com.speedata:deivice:+'
     compile 'org.greenrobot:eventbus:3.0.0'
 }
