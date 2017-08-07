@@ -265,7 +265,7 @@ public class SearchTagDialog extends Dialog implements
         if (inSearch) {
             return;
         }
-        int res = iuhfService.select_card(firm.get(arg2).epc,true);
+        int res = iuhfService.select_card(1,firm.get(arg2).epc,true);
         if (res == 0) {
             EventBus.getDefault().post(new MsgEvent("set_current_tag_epc", firm.get(arg2).epc));
             dismiss();
